@@ -1,3 +1,32 @@
-<p>hola mundo</p>
+<mat-toolbar color="primary">
+  <span>CALCULADORA DE PESO</span>
+</mat-toolbar>
+<div class="container" fxLayout="row" fxLayoutAlign="center start">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" fxLayout="row wrap">
+    <div fxFlex="100%" fxLayout="column">
+      <span class="mat-h3">SELECCIONE UNA OPCIÓN</span>
+      <mat-form-field appearance="fill">
+        <mat-label>CALCULAR PARA</mat-label>
+        <mat-select formControlName="pan">
+          <mat-option *ngFor="let pan of panes" [value]="pan.value">
+            {{ pan.viewValue | uppercase }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex="100%" fxLayout="column">
+      <span class="mat-h3">INGRESE EL PRECIO</span>
+      <mat-form-field appearance="fill">
+        <mat-label>PRECIO</mat-label>
+        <input matInput type="number" class="example-right-align" formControlName="precio" />
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>&nbsp; {{ precio === 1 ? 'PESO' : 'PESOS' }}</span>
+      </mat-form-field>
+    </div>
+    <div fxFlex="100%" fxLayoutAlign="center">
+      <button mat-stroked-button color="accent" type="submit" style="padding: 8px;">CALCULAR</button>
+    </div>
+  </form>
+</div>
 
 <router-outlet></router-outlet>
