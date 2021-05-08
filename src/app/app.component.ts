@@ -35,7 +35,7 @@ export class AppComponent {
   ) {
     this.form = this.formBuilder.group({
       pan: ['', [Validators.required]],
-      precio: ['', [Validators.required, Validators.min(1), Validators.max(45)]]
+      precio: ['', [Validators.required, Validators.min(1), Validators.max(10000)]]
     });
     this.form.get('pan')?.valueChanges.subscribe(
       pan => {
@@ -56,7 +56,6 @@ export class AppComponent {
     );
   }
   calcularPeso(): void {
-    console.log('diferencia: ', this.diferencia);
     this.peso = (this.diferencia >= 0) ? this.pesoDiferenciaPositiva : this.pesoDiferenciaNegativa;
   }
 
@@ -89,7 +88,6 @@ export class AppComponent {
   }
 
   get pesoDiferenciaNegativa(): number {
-    console.log('negativo');
     return ((this.porcentajeConRespectoAPesoBase / 50) + ((this.cociente * this.diferencia) / 100)) * this.pesoBase;
   }
 
@@ -98,7 +96,6 @@ export class AppComponent {
   }
 
   setPesoBase(pan: string): void {
-    console.log(pan);
     switch (pan) {
       case 'salado':
         this.pesoBaseValor = 300;
@@ -125,7 +122,7 @@ export class AppComponent {
       this.porcentajeConRespectoAPesoBaseValor = 40;
     } else if (precio >= 26 && precio <= 35) {
       this.porcentajeConRespectoAPesoBaseValor = 35;
-    } else if (precio >= 36 && precio <= 45) {
+    } else if (precio >= 36 && precio <= 10000) {
       this.porcentajeConRespectoAPesoBaseValor = 30;
     } else {
       this.porcentajeConRespectoAPesoBaseValor = 30;
@@ -153,6 +150,6 @@ export class AppComponent {
   }
 
   openSnackBar(message: string, action = 'ACEPTAR'): void {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, { duration: 3000 });
   }
 }
