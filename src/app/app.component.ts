@@ -133,7 +133,7 @@ export class AppComponent {
   }
 
   onSubmit(): void {
-    if (this.form.get('precio')?.valid && this.form.get('peso')?.valid) {
+    if (this.form.get('precio')?.valid && this.form.get('pan')?.valid) {
       this.openDialog();
     } else {
       this.openSnackBar('PURAS FALLAS CONTIGO 😞');
