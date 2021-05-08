@@ -130,7 +130,7 @@ export class AppComponent {
   }
 
   onSubmit(): void {
-    if (this.form.get('precio')?.valid && this.form.get('peso')?.valid) {
+    if (this.form.get('precio')?.valid && this.form.get('pan')?.valid) {
       this.openDialog();
     } else {
       this.openSnackBar('PURAS FALLAS CONTIGO 😞');
@@ -141,7 +141,6 @@ export class AppComponent {
     const selectedPan = this.panes.filter(pan => pan.value === this.pan);
     this.dialog.open(DialogComponent, {
       width: '90vw',
-      duration: 3000,
       data: {
         pan: selectedPan[0].viewValue,
         precio: this.precio,
@@ -151,6 +150,6 @@ export class AppComponent {
   }
 
   openSnackBar(message: string, action = 'ACEPTAR'): void {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, { duration: 3000 });
   }
 }
