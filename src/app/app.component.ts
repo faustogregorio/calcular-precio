@@ -119,13 +119,115 @@ export class AppComponent {
     } else if (precio >= 5 && precio <= 15) {
       this.porcentajeConRespectoAPesoBaseValor = 45;
     } else if (precio >= 16 && precio <= 25) {
-      this.porcentajeConRespectoAPesoBaseValor = 40;
+      switch (precio) {
+        case 16:
+          this.porcentajeConRespectoAPesoBaseValor = 39.5;
+          break;
+        case 17:
+          this.porcentajeConRespectoAPesoBaseValor = 39;
+          break;
+        case 18:
+          this.porcentajeConRespectoAPesoBaseValor = 38.5;
+          break;
+        case 19:
+          this.porcentajeConRespectoAPesoBaseValor = 38;
+          break;
+        case 20:
+          this.porcentajeConRespectoAPesoBaseValor = 37.5;
+          break;
+        case 21:
+          this.porcentajeConRespectoAPesoBaseValor = 37;
+          break;
+        case 22:
+          this.porcentajeConRespectoAPesoBaseValor = 36.5;
+          break;
+        case 23:
+          this.porcentajeConRespectoAPesoBaseValor = 36;
+          break;
+        case 24:
+          this.porcentajeConRespectoAPesoBaseValor = 35.5;
+          break;
+        case 25:
+          this.porcentajeConRespectoAPesoBaseValor = 35;
+          break;
+        default:
+          this.porcentajeConRespectoAPesoBaseValor = 35;
+          break;
+      }
     } else if (precio >= 26 && precio <= 35) {
-      this.porcentajeConRespectoAPesoBaseValor = 35;
+      switch (precio) {
+        case 26:
+          this.porcentajeConRespectoAPesoBaseValor = 34.5;
+          break;
+        case 27:
+          this.porcentajeConRespectoAPesoBaseValor = 34;
+          break;
+        case 28:
+          this.porcentajeConRespectoAPesoBaseValor = 33.5;
+          break;
+        case 29:
+          this.porcentajeConRespectoAPesoBaseValor = 33;
+          break;
+        case 30:
+          this.porcentajeConRespectoAPesoBaseValor = 32.5;
+          break;
+        case 31:
+          this.porcentajeConRespectoAPesoBaseValor = 32;
+          break;
+        case 32:
+          this.porcentajeConRespectoAPesoBaseValor = 31.5;
+          break;
+        case 33:
+          this.porcentajeConRespectoAPesoBaseValor = 31;
+          break;
+        case 34:
+          this.porcentajeConRespectoAPesoBaseValor = 30.5;
+          break;
+        case 35:
+          this.porcentajeConRespectoAPesoBaseValor = 30;
+          break;
+        default:
+          this.porcentajeConRespectoAPesoBaseValor = 30;
+          break;
+      }
     } else if (precio >= 36 && precio <= 10000) {
-      this.porcentajeConRespectoAPesoBaseValor = 30;
+      switch (precio) {
+        case 36:
+          this.porcentajeConRespectoAPesoBaseValor = 29.5;
+          break;
+        case 37:
+          this.porcentajeConRespectoAPesoBaseValor = 29;
+          break;
+        case 38:
+          this.porcentajeConRespectoAPesoBaseValor = 28.5;
+          break;
+        case 39:
+          this.porcentajeConRespectoAPesoBaseValor = 28;
+          break;
+        case 40:
+          this.porcentajeConRespectoAPesoBaseValor = 27.5;
+          break;
+        case 41:
+          this.porcentajeConRespectoAPesoBaseValor = 27;
+          break;
+        case 42:
+          this.porcentajeConRespectoAPesoBaseValor = 26.5;
+          break;
+        case 43:
+          this.porcentajeConRespectoAPesoBaseValor = 26;
+          break;
+        case 44:
+          this.porcentajeConRespectoAPesoBaseValor = 25.5;
+          break;
+        case 45:
+          this.porcentajeConRespectoAPesoBaseValor = 25;
+          break;
+        default:
+          this.porcentajeConRespectoAPesoBaseValor = 25;
+          break;
+      }
     } else {
-      this.porcentajeConRespectoAPesoBaseValor = 30;
+      this.porcentajeConRespectoAPesoBaseValor = 25;
     }
   }
 
