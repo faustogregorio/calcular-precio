@@ -238,7 +238,7 @@ export class AppComponent {
     if (this.form.get('precio')?.valid && this.form.get('pan')?.valid) {
       this.openDialog();
     } else {
-      this.openSnackBar('PURAS FALLAS CONTIGO 😞');
+      this.openSnackBar('TODOROKI ESTA DECEPCIONADO 😞');
     }
   }
 
