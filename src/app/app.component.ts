@@ -24,6 +24,7 @@ export class AppComponent {
     { value: 'dulce', viewValue: 'Pan Dulce' },
     { value: 'chapata', viewValue: 'Chapata' },
     { value: 'tamal', viewValue: 'Tamal de Harina' },
+    { value: 'empanada', viewValue: 'Empanada' },
   ];
 
   form: FormGroup;
@@ -101,10 +102,15 @@ export class AppComponent {
         this.pesoBaseValor = 300;
         break;
       case 'dulce':
-      case 'tamal':
         this.pesoBaseValor = 280;
         break;
+      case 'tamal':
+        this.pesoBaseValor = 270;
+        break;
       case 'chapata':
+        this.pesoBaseValor = 150;
+        break;
+      case 'empanada':
         this.pesoBaseValor = 150;
         break;
       default:
@@ -114,9 +120,9 @@ export class AppComponent {
   }
 
   setPorcentajeConRespectoAPesoBase(precio: number): void {
-    if (precio >= 1 && precio <= 4) {
-      this.porcentajeConRespectoAPesoBaseValor = 40;
-    } else if (precio >= 5 && precio <= 15) {
+    if (precio >= 1 && precio <= 9) {
+      this.porcentajeConRespectoAPesoBaseValor = 46.5;
+    } else if (precio >= 10 && precio <= 15) {
       this.porcentajeConRespectoAPesoBaseValor = 45;
     } else if (precio >= 16 && precio <= 25) {
       switch (precio) {
@@ -220,9 +226,6 @@ export class AppComponent {
           this.porcentajeConRespectoAPesoBaseValor = 25.5;
           break;
         case 45:
-          this.porcentajeConRespectoAPesoBaseValor = 25;
-          break;
-        default:
           this.porcentajeConRespectoAPesoBaseValor = 25;
           break;
       }
